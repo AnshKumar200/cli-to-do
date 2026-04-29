@@ -45,12 +45,14 @@ func main() {
 			todo.AddTask(TaskName, &TodoData)
 		case 3:
 			var index int
-			fmt.Println("Enter the index of the task: ")
-			todo.MarkTodo(index)
+			fmt.Print("Enter the index of the task: ")
+			fmt.Scan(&index)
+			todo.MarkTodo(index, &TodoData)
 		case 4:
 			var index int
-			fmt.Println("Enter the index of the task: ")
-			todo.DeleteTask(index)
+			fmt.Print("Enter the index of the task: ")
+			fmt.Scan(&index)
+			todo.DeleteTask(index, &TodoData)
 		}
 
 		fmt.Println("=====================")
