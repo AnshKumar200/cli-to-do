@@ -10,5 +10,9 @@
   {
     "task": "leetcode",
     "completed": true
+  },
+  {
+    "task": "space test task",
+    "completed": false
   }
 ]

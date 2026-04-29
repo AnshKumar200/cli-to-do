@@ -1,15 +1,18 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/AnshKumar200/cli-to-do/models"
 	"github.com/AnshKumar200/cli-to-do/todo"
 )
 
 func main() {
+	reader := bufio.NewReader(os.Stdin)
 	var exit bool = false
 	var choice int
 
@@ -32,6 +35,7 @@ func main() {
 		fmt.Println("2 - Add")
 		fmt.Println("3 - Mark As Complete")
 		fmt.Println("4 - Delete")
+		fmt.Println("5 - Exit")
 
 		fmt.Scan(&choice)
 
@@ -39,9 +43,9 @@ func main() {
 		case 1:
 			todo.ViewAllTask(TodoData)
 		case 2:
-			var TaskName string
 			fmt.Print("Task: ")
-			fmt.Scan(&TaskName)
+			TaskName, _ := reader.ReadString('\n')
+			TaskName = strings.TrimSpace(TaskName)
 			todo.AddTask(TaskName, &TodoData)
 		case 3:
 			var index int
@@ -53,6 +57,8 @@ func main() {
 			fmt.Print("Enter the index of the task: ")
 			fmt.Scan(&index)
 			todo.DeleteTask(index, &TodoData)
+		case 5:
+			os.Exit(1)
 		}
 
 		fmt.Println("=====================")
