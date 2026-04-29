@@ -1,0 +1,30 @@
+[
+  {
+    "task": "task1",
+    "completed": false
+  },
+  {
+    "task": "task2",
+    "completed": true
+  },
+  {
+    "task": "task3",
+    "completed": false
+  },
+  {
+    "task": "task4",
+    "completed": false
+  },
+  {
+    "task": "task5",
+    "completed": true
+  },
+  {
+    "task": "fromcmd",
+    "completed": false
+  },
+  {
+    "task": "leetcode",
+    "completed": false
+  }
+]
